@@ -4,291 +4,367 @@ permalink: /blacker2014/
 ---
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Effects of Action Video Game Training on Visual Working Memory</title>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Effects of Action Video Game Training on Visual Working Memory</title>
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    :root {
-      --bg: #fafaf9;
-      --surface: #ffffff;
-      --border: rgba(0,0,0,0.08);
-      --border-strong: rgba(0,0,0,0.15);
-      --text: #1a1a18;
-      --muted: #6b6b67;
-      --accent: #1a1a18;
-      --tag-bg: #f0efeb;
-      --tag-text: #3a3a38;
-    }
+        :root {
+            --bg: #fafaf9;
+            --surface: #ffffff;
+            --border: rgba(0, 0, 0, 0.08);
+            --border-strong: rgba(0, 0, 0, 0.15);
+            --text: #1a1a18;
+            --muted: #6b6b67;
+            --accent: #1a1a18;
+            --tag-bg: #f0efeb;
+            --tag-text: #3a3a38;
+        }
 
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #141412;
-        --surface: #1e1e1c;
-        --border: rgba(255,255,255,0.08);
-        --border-strong: rgba(255,255,255,0.15);
-        --text: #e8e8e4;
-        --muted: #9a9a94;
-        --accent: #e8e8e4;
-        --tag-bg: #2a2a28;
-        --tag-text: #b8b8b2;
-      }
-    }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #141412;
+                --surface: #1e1e1c;
+                --border: rgba(255, 255, 255, 0.08);
+                --border-strong: rgba(255, 255, 255, 0.15);
+                --text: #e8e8e4;
+                --muted: #9a9a94;
+                --accent: #e8e8e4;
+                --tag-bg: #2a2a28;
+                --tag-text: #b8b8b2;
+            }
+        }
 
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Georgia', 'Times New Roman', serif;
-      font-size: 17px;
-      line-height: 1.75;
-      -webkit-font-smoothing: antialiased;
-    }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Georgia', 'Times New Roman', serif;
+            font-size: 17px;
+            line-height: 1.75;
+            -webkit-font-smoothing: antialiased;
+        }
 
-    .container {
-      max-width: 680px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
 
-    header {
-      padding: 80px 0 48px;
-      border-bottom: 0.5px solid var(--border-strong);
-      margin-bottom: 56px;
-    }
+        header {
+            padding: 80px 0 48px;
+            border-bottom: 0.5px solid var(--border-strong);
+            margin-bottom: 56px;
+        }
 
-    .label {
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 20px;
-    }
+        .label {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 20px;
+        }
 
-    h1 {
-      font-size: clamp(22px, 4vw, 30px);
-      font-weight: normal;
-      line-height: 1.3;
-      letter-spacing: -0.01em;
-      margin-bottom: 32px;
-    }
+        h1 {
+            font-size: clamp(22px, 4vw, 30px);
+            font-weight: normal;
+            line-height: 1.3;
+            letter-spacing: -0.01em;
+            margin-bottom: 32px;
+        }
 
-    .meta-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
-      border: 0.5px solid var(--border-strong);
-    }
+        .meta-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            border: 0.5px solid var(--border-strong);
+        }
 
-    .meta-item {
-      padding: 14px 18px;
-      border-bottom: 0.5px solid var(--border);
-      border-right: 0.5px solid var(--border);
-    }
+        .meta-item {
+            padding: 14px 18px;
+            border-bottom: 0.5px solid var(--border);
+            border-right: 0.5px solid var(--border);
+        }
 
-    .meta-item:nth-child(even) { border-right: none; }
-    .meta-item:nth-last-child(-n+2) { border-bottom: none; }
-    .meta-item:last-child:nth-child(odd) {
-      grid-column: span 2;
-      border-right: none;
-    }
+        .meta-item:nth-child(even) {
+            border-right: none;
+        }
 
-    .meta-label {
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 4px;
-    }
+        .meta-item:nth-last-child(-n+2) {
+            border-bottom: none;
+        }
 
-    .meta-value {
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      font-size: 14px;
-      color: var(--text);
-    }
+        .meta-item:last-child:nth-child(odd) {
+            grid-column: span 2;
+            border-right: none;
+        }
 
-    section {
-      margin-bottom: 56px;
-    }
+        .meta-label {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 4px;
+        }
 
-    h2 {
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 20px;
-      padding-bottom: 12px;
-      border-bottom: 0.5px solid var(--border);
-    }
+        .meta-value {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 14px;
+            color: var(--text);
+        }
 
-    p {
-      margin-bottom: 1.25em;
-      color: var(--text);
-    }
+        section {
+            margin-bottom: 56px;
+        }
 
-    p:last-child { margin-bottom: 0; }
+        h2 {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 0.5px solid var(--border);
+        }
 
-    ul {
-      list-style: none;
-      margin-bottom: 1.25em;
-    }
+        p {
+            margin-bottom: 1.25em;
+            color: var(--text);
+        }
 
-    ul li {
-      padding: 12px 0;
-      border-bottom: 0.5px solid var(--border);
-      padding-left: 0;
-    }
+        p:last-child {
+            margin-bottom: 0;
+        }
 
-    ul li:first-child { border-top: 0.5px solid var(--border); }
+        ul {
+            list-style: none;
+            margin-bottom: 1.25em;
+        }
 
-    ul li strong {
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      font-size: 13px;
-      font-weight: 500;
-      letter-spacing: 0.02em;
-      display: block;
-      margin-bottom: 4px;
-      color: var(--text);
-    }
+        ul li {
+            padding: 12px 0;
+            border-bottom: 0.5px solid var(--border);
+            padding-left: 0;
+        }
 
-    ul li span {
-      font-size: 15px;
-      color: var(--muted);
-      line-height: 1.6;
-    }
+        ul li:first-child {
+            border-top: 0.5px solid var(--border);
+        }
 
-    .sources-block {
-      background: var(--surface);
-      border: 0.5px solid var(--border-strong);
-      padding: 20px 24px;
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      font-size: 13px;
-      line-height: 1.7;
-      color: var(--muted);
-    }
+        ul li strong {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            display: block;
+            margin-bottom: 4px;
+            color: var(--text);
+        }
 
-    .sources-block a {
-      color: var(--text);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
+        ul li span {
+            font-size: 15px;
+            color: var(--muted);
+            line-height: 1.6;
+        }
 
-    .sources-block em {
-      font-style: italic;
-      color: var(--text);
-    }
+        .sources-block {
+            background: var(--surface);
+            border: 0.5px solid var(--border-strong);
+            padding: 20px 24px;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 13px;
+            line-height: 1.7;
+            color: var(--muted);
+        }
 
-    footer {
-      margin-top: 80px;
-      padding: 32px 0 56px;
-      border-top: 0.5px solid var(--border);
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      font-size: 12px;
-      color: var(--muted);
-    }
-  </style>
+        .sources-block a {
+            color: var(--text);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .sources-block em {
+            font-style: italic;
+            color: var(--text);
+        }
+
+        footer {
+            margin-top: 80px;
+            padding: 32px 0 56px;
+            border-top: 0.5px solid var(--border);
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 12px;
+            color: var(--muted);
+        }
+    </style>
 </head>
+
 <body>
-  <div class="container">
+    <div class="container">
 
-    <header>
-      <p class="label">Paper Summary</p>
-      <h1>Effects of Action Video Game Training on Visual Working Memory</h1>
+        <header>
+            <p class="label">Paper Summary</p>
+            <h1>Effects of Action Video Game Training on Visual Working Memory</h1>
 
-      <div class="meta-grid">
-        <div class="meta-item">
-          <p class="meta-label">Sample size</p>
-          <p class="meta-value">34 male undergraduates</p>
-        </div>
-        <div class="meta-item">
-          <p class="meta-label">Games used</p>
-          <p class="meta-value">Call of Duty vs. The Sims</p>
-        </div>
-        <div class="meta-item">
-          <p class="meta-label">Training time</p>
-          <p class="meta-value">30 hours over 30 days</p>
-        </div>
-        <div class="meta-item">
-          <p class="meta-label">Tasks</p>
-          <p class="meta-value">Change detection, color wheel, symmetry span</p>
-        </div>
-        <div class="meta-item">
-          <p class="meta-label">Journal</p>
-          <p class="meta-value">Journal of Experimental Psychology: Human Perception and Performance, 2014</p>
-        </div>
-      </div>
-    </header>
+            <div class="meta-grid">
+                <div class="meta-item">
+                    <p class="meta-label">Sample size</p>
+                    <p class="meta-value">34 male undergraduates</p>
+                </div>
+                <div class="meta-item">
+                    <p class="meta-label">Games used</p>
+                    <p class="meta-value">Call of Duty vs. The Sims</p>
+                </div>
+                <div class="meta-item">
+                    <p class="meta-label">Training time</p>
+                    <p class="meta-value">30 hours over 30 days</p>
+                </div>
+                <div class="meta-item">
+                    <p class="meta-label">Tasks</p>
+                    <p class="meta-value">Change detection, color wheel, symmetry span</p>
+                </div>
+                <div class="meta-item">
+                    <p class="meta-label">Journal</p>
+                    <p class="meta-value">Journal of Experimental Psychology: Human Perception and Performance, 2014</p>
+                </div>
+            </div>
+        </header>
 
-    <section>
-      <h2>Background &amp; Research Aims</h2>
-      <p>Visual working memory refers to the cognitive ability to maintain visual information in mind over a brief delay.It underpins a wide range of everyday cognitive tasks, from learning and problem solving to navigating complex visual environments.</p>
-      <p>Despite its central role in cognition, visual working memory is severely capacity-limited, with most people able to maintain only around three to four items simultaneously. A key question in cognitive research is whether this limit is fixed or whether targeted training can produce meaningful improvements.</p>
-      <p>One promising line of evidence comes from action video game players, who have consistently been shown to outperform non-players on visual memory and attention tasks. The majority of this evidence is cross-sectional  (comparing groups of existing gamers with non-gamers) which does not allow causal conclusions. It remains unclear whether gaming experience produces these advantages, or whether individuals with stronger visual cognitive abilities are simply more likely to play action games.</p>
-      <p>This study addressed that question directly through a controlled training design. The aims f the current study were to determine whether action game training increases visual working memory capacity, whether it improves the precision with which information is stored, and whether any benefits generalize to more complex working memory tasks requiring simultaneous processing and storage.</p>
-    </section>
+        <section>
+            <h2>Background &amp; Research Aims</h2>
+            <p>Visual working memory refers to the cognitive ability to maintain visual information in mind over a brief
+                delay.It underpins a wide range of everyday cognitive tasks, from learning and problem solving to
+                navigating complex visual environments.</p>
+            <p>Despite its central role in cognition, visual working memory is severely capacity-limited, with most
+                people able to maintain only around three to four items simultaneously. A key question in cognitive
+                research is whether this limit is fixed or whether targeted training can produce meaningful
+                improvements.</p>
+            <p>One promising line of evidence comes from action video game players, who have consistently been shown to
+                outperform non-players on visual memory and attention tasks. The majority of this evidence is
+                cross-sectional (comparing groups of existing gamers with non-gamers) which does not allow causal
+                conclusions. It remains unclear whether gaming experience produces these advantages, or whether
+                individuals with stronger visual cognitive abilities are simply more likely to play action games.</p>
+            <p>This study addressed that question directly through a controlled training design. The aims f the current
+                study were to determine whether action game training increases visual working memory capacity, whether
+                it improves the precision with which information is stored, and whether any benefits generalize to more
+                complex working memory tasks requiring simultaneous processing and storage.</p>
+        </section>
 
-    <section>
-      <h2>Methods</h2>
-      <p>Thirty-four male undergraduates with no prior action game experience were randomly assigned to one of two training groups. Over 30 days, the action game group completed 30 hours of play on Call of Duty, while the control group trained for an equivalent duration on The Sims. Participants were kept unaware of the alternate training condition throughout the study.</p>
-      <p>The selection of these two games was theoretically motivated. Call of Duty is fast-paced and visually demanding, and needs continuous tracking of targets as well as quick perceptual decisions. The Sims is slower and strategy-oriented. This contrast allowed the researchers to attribute the effects to action game play rather than general gaming.</p>
-      <p>All participants completed three assessments before and after the training period, each targeting a distinct aspect of visual working memory:</p>
-      <ul>
-        <li>
-          <strong>Change detection</strong>
-          <span>Participants viewed a briefly presented array of colored squares and had to state whether a color had changed when it reappeared. This measured memory capacity by the number of items that could be reliably maintained.</span>
-        </li>
-        <li>
-          <strong>Color wheel</strong>
-          <span>Participants had to remember a set of colored squares and  reproduced a probed color as accurately as possible on a continuous color wheel. This measured the precision of stored representations, rather than the quantity.</span>
-        </li>
-        <li>
-          <strong>Symmetry span</strong>
-          <span>Participants recalled sequences of spatial locations while performing symmetry judgments on an unrelated display. This measured complex executive working memory which is the capacity to maintain information while having attentional demands.</span>
-        </li>
-      </ul>
-      <p>Self-reported measures of motivation, engagement, and performance expectations were collected throughout to control for potential placebo effects.</p>
-    </section>
+        <section>
+            <h2>Methods</h2>
+            <p>Thirty-four male undergraduates with no prior action game experience were randomly assigned to one of two
+                training groups. Over 30 days, the action game group completed 30 hours of play on Call of Duty, while
+                the control group trained for an equivalent duration on The Sims. Participants were kept unaware of the
+                alternate training condition throughout the study.</p>
+            <p>The selection of these two games was theoretically motivated. Call of Duty is fast-paced and visually
+                demanding, and needs continuous tracking of targets as well as quick perceptual decisions. The Sims is
+                slower and strategy-oriented. This contrast allowed the researchers to attribute the effects to action
+                game play rather than general gaming.</p>
+            <p>All participants completed three assessments before and after the training period, each targeting a
+                distinct aspect of visual working memory:</p>
+            <ul>
+                <li>
+                    <strong>Change detection</strong>
+                    <span>Participants viewed a briefly presented array of colored squares and had to state whether a
+                        color had changed when it reappeared. This measured memory capacity by the number of items that
+                        could be reliably maintained.</span>
+                </li>
+                <li>
+                    <strong>Color wheel</strong>
+                    <span>Participants had to remember a set of colored squares and reproduced a probed color as
+                        accurately as possible on a continuous color wheel. This measured the precision of stored
+                        representations, rather than the quantity.</span>
+                </li>
+                <li>
+                    <strong>Symmetry span</strong>
+                    <span>Participants recalled sequences of spatial locations while performing symmetry judgments on an
+                        unrelated display. This measured complex executive working memory which is the capacity to
+                        maintain information while having attentional demands.</span>
+                </li>
+            </ul>
+            <p>Self-reported measures of motivation, engagement, and performance expectations were collected throughout
+                to control for potential placebo effects.</p>
+        </section>
 
-<section>
-      <h2>Results</h2>
-      <p>On the change detection task, the action game group improved significantly after training — mean capacity increased from around 4.0 to 4.6 items, while the control group showed no comparable change. This was the clearest and most reliable finding of the study.</p>
-      <p>On the color wheel task, the action game group made fewer errors when recalling colors at a medium difficulty level, pointing to some improvement in memory precision. However, this effect only appeared at one specific difficulty level and fell just short of full statistical significance, so it should be interpreted with caution. The authors suggest this may be because medium difficulty best reflects the natural limit of the memory system.</p>
-      <p>On the symmetry span task, both groups improved by a similar amount. Since neither group outperformed the other, this is most likely explained by simple familiarity with the task rather than any genuine training effect.</p>
-      <p>Across all measures, the two groups reported comparable levels of motivation, engagement, and expectations about improvement throughout the study. The capacity gains in the action game group therefore cannot be attributed to one group simply trying harder or believing more strongly that they would improve.</p>
-    </section>
+        <section>
+            <h2>Results</h2>
+            <p>On the change detection task, the action game group improved significantly after training — mean capacity
+                increased from around 4.0 to 4.6 items, while the control group showed no comparable change. This was
+                the clearest and most reliable finding of the study.</p>
+            <p>On the color wheel task, the action game group made fewer errors when recalling colors at a medium
+                difficulty level, pointing to some improvement in memory precision. However, this effect only appeared
+                at one specific difficulty level and fell just short of full statistical significance, so it should be
+                interpreted with caution. The authors suggest this may be because medium difficulty best reflects the
+                natural limit of the memory system.</p>
+            <p>On the symmetry span task, both groups improved by a similar amount. Since neither group outperformed the
+                other, this is most likely explained by simple familiarity with the task rather than any genuine
+                training effect.</p>
+            <p>Across all measures, the two groups reported comparable levels of motivation, engagement, and
+                expectations about improvement throughout the study. The capacity gains in the action game group
+                therefore cannot be attributed to one group simply trying harder or believing more strongly that they
+                would improve.</p>
+        </section>
 
-    <section>
-      <h2>Discussion</h2>
-      <p>Looking at the three questions the study set out to answer: action game training reliably improved how much information people could hold in visual working memory. There is some indication that it also sharpened memory precision, though that finding is not strong enough to draw firm conclusions from. And no specific benefit was found for more complex, executive working memory.</p>
-      <p>The lack of improvement on the symmetry span task makes sense when you consider what action games actually demand. They require rapid visual processing and quick reactions, but they rarely ask players to hold something in mind while deliberately shifting attention to something else entirely. This suggests that different aspects of working memory respond to different kinds of training.</p>
-      <p>The study is also notable for how carefully it was designed. A common criticism of video game training research is that results might simply reflect higher motivation or optimism in the gaming group. By measuring these factors throughout and keeping participants unaware of what the other group was doing, this study makes a more convincing case for its findings than much of the earlier work in this area.</p>
-    </section>
+        <section>
+            <h2>Discussion</h2>
+            <p>Looking at the three questions the study set out to answer: action game training reliably improved how
+                much information people could hold in visual working memory. There is some indication that it also
+                sharpened memory precision, though that finding is not strong enough to draw firm conclusions from. And
+                no specific benefit was found for more complex, executive working memory.</p>
+            <p>The lack of improvement on the symmetry span task makes sense when you consider what action games
+                actually demand. They require rapid visual processing and quick reactions, but they rarely ask players
+                to hold something in mind while deliberately shifting attention to something else entirely. This
+                suggests that different aspects of working memory respond to different kinds of training.</p>
+            <p>The study is also notable for how carefully it was designed. A common criticism of video game training
+                research is that results might simply reflect higher motivation or optimism in the gaming group. By
+                measuring these factors throughout and keeping participants unaware of what the other group was doing,
+                this study makes a more convincing case for its findings than much of the earlier work in this area.</p>
+        </section>
 
-    <section>
-      <h2>Conclusion</h2>
-      <p>This study offers solid experimental evidence that action video game training can improve visual working memory capacity in people with no prior gaming experience. The benefits appear to be specific to basic visual storage and do not extend to more demanding executive memory processes, at least not within 30 hours of training.</p>
-      <p>The implications reach beyond the lab. Visual working memory plays a central role in learning and attention, and is often altered in people with ADHD, acquired brain injury, or age-related cognitive decline. Because action games are engaging and accessible, they are an option for cognitive training in everyday and clinical contexts.</p>
-      <p>What remains unclear is exactly what it is about action games that produces these effects. Finding out whether it is the visual complexity, the speed, the constant decision-making, or some combination of these would allow researchers to design more targeted training.</p>
-    </section>
+        <section>
+            <h2>Conclusion</h2>
+            <p>This study offers solid experimental evidence that action video game training can improve visual working
+                memory capacity in people with no prior gaming experience. The benefits appear to be specific to basic
+                visual storage and do not extend to more demanding executive memory processes, at least not within 30
+                hours of training.</p>
+            <p>The implications reach beyond the lab. Visual working memory plays a central role in learning and
+                attention, and is often altered in people with ADHD, acquired brain injury, or age-related cognitive
+                decline. Because action games are engaging and accessible, they are an option for cognitive training in
+                everyday and clinical contexts.</p>
+            <p>What remains unclear is exactly what it is about action games that produces these effects. Finding out
+                whether it is the visual complexity, the speed, the constant decision-making, or some combination of
+                these would allow researchers to design more targeted training.</p>
+        </section>
 
-    <section>
-      <h2>Sources</h2>
-      <div class="sources-block">
-        Blacker, K. J., Curby, K. M., Klobusicky, E., &amp; Chein, J. M. (2014). Effects of action video game training on visual working memory. <em>Journal of Experimental Psychology: Human Perception and Performance, 40</em>(5), 1992–2004. <a href="https://doi.org/10.1037/a0037556" target="_blank">https://doi.org/10.1037/a0037556</a>
-      </div>
-    </section>
+        <section>
+            <h2>Sources</h2>
+            <div class="sources-block">
+                Blacker, K. J., Curby, K. M., Klobusicky, E., &amp; Chein, J. M. (2014). Effects of action video game
+                training on visual working memory. <em>Journal of Experimental Psychology: Human Perception and
+                    Performance, 40</em>(5), 1992–2004. <a href="https://doi.org/10.1037/a0037556"
+                    target="_blank">https://doi.org/10.1037/a0037556</a>
+            </div>
+        </section>
 
-    <footer>
-      <p>Blacker et al., 2014 &mdash; Paper summary</p>
-    </footer>
+        <footer>
+            <p>Blacker et al., 2014 &mdash; Paper summary</p>
+        </footer>
 
-  </div>
+    </div>
 </body>
+
 </html>
